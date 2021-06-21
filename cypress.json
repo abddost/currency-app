@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "mockDataServerUrl": "http://api.frankfurter.app",
+    "currency-convertor": "http://localhost:3000/",
+    "autoOpenDevTools": "false"
+  }
+}

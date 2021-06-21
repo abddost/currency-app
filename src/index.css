@@ -1,0 +1,43 @@
+html {
+  /* colors */
+  --primary: #362d6b;
+  --secondary: darkslategray;
+  --background: #faf5c4;
+  --border: black;
+  --light-border: #cccccc;
+  --selected: gold;
+  --error: red;
+  --font-color: black;
+}
+
+* {
+  /* So 100% means 100% */
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /* background-color: var(--background); */
+}
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+.wrap-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;
+  height: 400px;
+  padding: 20px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+input::before {
+  display: none !important;
+}
+input::after {
+  display: none !important;
+}
