@@ -74,11 +74,15 @@ function Currencies(props: IProps) {
 
   useEffect(() => {
     getCurrenciesList();
+
     let interval = setInterval(() => getCurrenciesList(), 15000);
+
     return () => {
       clearInterval(interval);
     };
-  });
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={globalClasses.wrap}>
@@ -100,7 +104,7 @@ function Currencies(props: IProps) {
                   variant: "outlined",
                   select: true,
                   currencies: Object.entries(list),
-                } as any
+                }
               }
             />
           </Grid>

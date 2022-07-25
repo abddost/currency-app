@@ -5,6 +5,7 @@ import Currencies from "./pages/Currencies";
 import MainPage from "./pages/MainPage";
 
 export const Routes = () => {
+  
   return (
     <RootLayout>
       <Switch>

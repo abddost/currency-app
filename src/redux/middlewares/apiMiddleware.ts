@@ -55,13 +55,13 @@ const apiMiddleware =
           // dispatch(authActions.logout());
           // dispatch(push("/login"));
 
-          throw { response };
+          // throw { response };
         } else {
-          throw (
-            (response && response.data && { response }) || {
-              response: { data: { message: "Что-то не так!" } },
-            }
-          );
+          // throw (
+          //   (response && response.data && { response }) || {
+          //     response: { data: { message: "Что-то не так!" } },
+          //   }
+          // );
         }
       })
       .catch((error: { requestData: any; response: { status: number } }) => {

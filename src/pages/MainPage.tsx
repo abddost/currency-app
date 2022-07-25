@@ -68,7 +68,8 @@ function MainPage(props: IProps) {
 
   useEffect(() => {
     getCurrenciesList();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={globalClasses.wrap}>
@@ -91,7 +92,7 @@ function MainPage(props: IProps) {
                   required: true,
                   label: "Amount",
                   variant: "outlined",
-                } as any
+                } 
               }
             />
           </Grid>
@@ -108,7 +109,7 @@ function MainPage(props: IProps) {
                   variant: "outlined",
                   select: true,
                   currencies: Object.entries(list),
-                } as any
+                } 
               }
             />
           </Grid>
@@ -124,7 +125,7 @@ function MainPage(props: IProps) {
                   variant: "outlined",
                   select: true,
                   currencies: Object.entries(list),
-                } as any
+                } 
               }
             />
           </Grid>

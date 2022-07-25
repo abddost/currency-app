@@ -1,13 +1,21 @@
 import * as currencyTypes from "../actionTypes/currencyActionTypes";
 import { list, convert } from "../../api/currencyApi";
 import { AxiosResponse } from "axios";
+import { AnyAction } from "redux";
+import { ThunkAction } from "redux-thunk";
+
+type Param = {
+  amount: string;
+  from: string;
+  to: string;
+}
 
 export const getCurrencies =
-  (params?: any) =>
+  () =>
   (
     dispatch: (arg0: {
       api: (query: any) => Promise<AxiosResponse<any>>;
-      types: any[];
+      types: string[];
       query: any;
     }) => void
   ) => {
@@ -18,17 +26,17 @@ export const getCurrencies =
         currencyTypes.LOAD_CURRENCY_LIST_SUCCESS,
         currencyTypes.LOAD_CURRENCY_LIST_ERROR,
       ],
-      query: params,
+      query: {},
     });
   };
 
 export const convertCurrency =
-  (params: any) =>
+  (params: Param): ThunkAction<void, unknown, unknown, AnyAction> =>
   (
     dispatch: (arg0: {
-      api: (query: any) => Promise<AxiosResponse<any>>;
-      types: any[];
-      query: any;
+      api: (query: Param) => Promise<AxiosResponse<Param>>;
+      types: string[];
+      query: Param;
     }) => void
   ) => {
     console.error(params);
